@@ -1,0 +1,63 @@
+Create Database Practice_DB;
+
+Use Practice_DB;
+Go
+
+Create Table Student_Info(
+	Roll_No int Primary Key Not Null, Student_Name varchar(50) Not Null, DOB date Not Null, Mob_No Numeric(10,0) Not Null, Course nvarchar(25) Not Null
+);
+
+Insert Into Student_Info Values (101, 'Ash' ,'2005-03-23', 9283928392 ,'BCS');
+
+Select * From Student_Info;
+
+Insert Into Student_Info(Roll_No,Student_Name,DOB,Mob_No,Course) Values
+(102,'Rohit','2001-03-12',5768657576,'BCA'),
+(103,'Shaam','2002-04-22',7547894563,'M.Tech'),
+(104,'Ram','1963-03-22',9753285305,'B.Tech');
+
+
+Select Student_Name,DOB From Student_Info;
+
+Select * From Student_Info Where Student_Name Like 'R%';
+
+Select * From Student_Info Where Course = 'BCS';
+
+Insert Into Student_Info(Roll_No,Student_Name,DOB,Mob_No,Course) Values
+(105,'Jack','1991-09-13',9753285305,'BCA'),
+(106,'Serina','2000-05-18',9753285305,'B.Tech'),
+(107,'Ram','2006-08-19',9753285305,'B.Tech');
+
+Update Student_Info Set Course = 'M.Tech' Where Roll_No = 101;
+
+Delete From Student_Info Where Roll_No = 104;
+
+==========================================================********************************************==========================
+
+select * from Doctor_Details;
+
+select * from Doctor_Details where Name like 'Pr%';
+select * from Doctor_Details where Name like '%ck';
+select * from Doctor_Details where Name like '%A%';
+select * from Doctor_Details where Qualification like 'B__';
+
+select * from Doctor_Details where Name like 'J%' or City like 'D%' or Name like 'H%';
+
+select * from Doctor_Details where City like 'M%' And Name like 'N%' And Name like '%o';
+
+select * from Doctor_Details where City Not like 'P%';
+
+select * from Doctor_Details where City like '[E-M]%';
+
+select * from Doctor_Details where City like '[^E-M]%';
+
+
+select * From Doctor_Details Order By salary Asc;
+select * From Doctor_Details Order By salary Desc;
+select * From Doctor_Details Order By Name Asc;
+
+select * From Doctor_Details Order By Name Asc ,salary Desc;
+
+
+select * from Doctor_Details where Name like 'H%' Order by Name Desc;
+
