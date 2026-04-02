@@ -1,0 +1,83 @@
+
+Create Table Admin_Login (Username nvarchar(10) Not Null, Password nvarchar(10) Not Null);
+
+Create Table User_Login (Username nvarchar(10) Not Null, Password nvarchar(10) Not Null);
+
+Create Table Doctor_Details(DID int Not Null, Name varchar(40) Not Null, Qualification nvarchar(40) Not Null, Salary Money Not Null, DOB date Not Null, Mob_No Numeric(10,0) Not Null, City varchar(40) );
+
+Select * From Admin_Login;
+
+Select * From Doctor_Details;
+
+=======================================*****===================================================
+
+Insert Into Admin_Login (Username, Password) Values ('Pune', 'P');
+
+Select * From Admin_Login;
+
+Insert Into User_Login(Username, Password) Values ('Admin', 'a123');
+Insert Into User_Login(Username, Password) Values ('Accounts', 'acc123');
+Insert Into User_Login(Username, Password) Values ('Manager', 'mgr123');
+
+Insert Into User_Login(Password, Username) Values ('Watch1', 'Wtc1');
+
+Select * From Use_rLogin;
+
+Insert Into User_Login Values ('Peon', 'p123');
+
+=======================================*****===================================================
+
+Select * From Doctor_Details;
+
+Insert Into Doctor_Details (DID, Name, Qualification, Salary, DOB, Mob_No, City) Values (101, 'Harry', 'MBBS', 45000, '12/21/1852', 5555522222, 'Dehli');
+
+Insert Into Doctor_Details (DID, Name, DOB , Salary, Qualification, Mob_No) Values (150, 'Bob', '1757-12-3', 51000, 'BAMS', 2525252525);
+
+Insert Into Doctor_Details (DID, Name, DOB , Salary, Qualification, Mob_No, City) Values (205, 'Richie', '9-Feb-2035', 20000, 'BDS', 808008080, 'Pune');
+
+Insert Into Doctor_Details Values (201, 'Neo', 'BAMS', 45000, '19-Jun-1680', 546464646, 'Mumbai');
+Insert Into Doctor_Details Values (301, 'Jack', 'MBBS', 30000, '18-Oct-1820', 8888555522,' ');
+Insert Into Doctor_Details Values (501, 'Lio', 'BDS', 25000, '25-May-1984', 6666555222, 'Chennai');
+
+Insert Into Doctor_Details Values (601, 'Amey', 'MD', 150000, '30-Apr-1975', 9191919191, 'Karad');
+Insert Into Doctor_Details Values (701, 'Pranav', 'BAMS', 75000, '2-Oct-1945', 8484844848,' ');
+Insert Into Doctor_Details Values (801, 'Harish', 'MS', 175000, '15-Aug-1947', 7777711111, 'Goa');
+
+Select * From Doctor_Details;
+
+Select * From Doctor_Details;
+
+Select * From Doctor_Details where Salary > 100000;
+Select * From Doctor_Details where Salary < 100000;
+
+Select * From Doctor_Details where Salary != 75000;
+
+Select * From Doctor_Details where Salary = 75000;
+
+Select Max(Salary) From Doctor_Details;
+
+Select * From Doctor_Details where Salary = (Select Max(Salary) From Doctor_Details);
+
+Select * From Doctor_Details where Salary Between 45000 And 125000;	    -- Inclusive
+
+Select * From Doctor_Details where Salary > 45000 And Salary < 125000;  -- Exclude
+
+Select * From Doctor_Details;
+
+Select Name From Doctor_Details;
+Select MobNo From Doctor_Details;
+
+Select Name, MobNo, Qualification, City From Doctor_Details;
+
+Select Max(Salary) From Doctor_Details;
+
+Select Count(*) From Doctor_Details;
+
+Select Count(MobNo) From Doctor_Details;
+
+Select Count(City) From Doctor_Details;
+
+
+
+
+
